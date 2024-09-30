@@ -1,0 +1,15 @@
+<div class="bg-gray-800 text-white p-4 shadow-md flex items-center">
+    <a href="/home" class="hover:bg-gray-700 rounded-md px-4 py-2 transition-colors">Home</a>
+    <a href="/loginhistory" class="hover:bg-gray-700 rounded-md px-4 py-2 transition-colors">LoginHistory</a>
+   
+    <a href="/profile" class="hover:bg-gray-700 rounded-md px-4 py-2 transition-colors">Profile</a>
+    
+    <ng-container *ngIf="!isLoggedIn()">
+        <a href="/signup" class="hover:bg-gray-700 rounded-md px-4 py-2 transition-colors">Sign Up</a>
+        <a href="/login" class="hover:bg-gray-700 rounded-md px-4 py-2 transition-colors">Login</a>
+    </ng-container>
+
+    <ng-container *ngIf="isLoggedIn()">
+        <button (click)="logout()" class="hover:bg-gray-700 rounded-md px-4 py-2 transition-colors">Logout</button>
+    </ng-container>
+</div>
